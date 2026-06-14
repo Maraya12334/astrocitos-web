@@ -1,0 +1,538 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.12), transparent 18%),
+    linear-gradient(180deg, #eef4fb 0%, #f9fbff 45%, #f5f7fb 100%);
+  color: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.site-header {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #22356f 0%, #0f172a 100%);
+  color: #fff;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  top: -70px;
+  right: -70px;
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.18);
+  left: -40px;
+  bottom: -50px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 90px;
+  min-width: 90px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.site-header h1 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(2.1rem, 4vw, 3.25rem);
+  letter-spacing: -0.04em;
+}
+
+.site-header p {
+  margin: 0;
+  opacity: 0.88;
+  max-width: 520px;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 1024px;
+  margin: -2.5rem auto 2.5rem;
+  padding: 0 1.5rem 2rem;
+}
+
+.hero-card,
+.intro,
+.contact-card,
+.location-card,
+.team-card,
+.overview-card,
+.feature-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 28px;
+  padding: 2.25rem;
+  box-shadow: 0 30px 90px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.hero-card::before,
+.intro::before {
+  content: "";
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  border-radius: 24px;
+  background: rgba(59, 130, 246, 0.08);
+  top: 24px;
+  right: 24px;
+}
+
+.brand-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.small-logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+}
+
+.brand-name {
+  margin: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.22em;
+  text-transform: lowercase;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.brand-handle {
+  margin: 0.15rem 0 0;
+  color: #475569;
+  font-size: 0.92rem;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.5rem 0;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.top-nav a {
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  font-weight: 700;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.hero-card::before {
+  background: rgba(236, 72, 153, 0.1);
+}
+
+.card-home::before {
+  background: rgba(96, 165, 250, 0.08);
+}
+
+.card-branch::before {
+  background: rgba(251, 191, 36, 0.12);
+}
+
+.hero-card h1,
+.intro h2 {
+  margin-top: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.hero-card p,
+.intro p {
+  margin: 1rem 0 0;
+  max-width: 720px;
+}
+
+.overview-grid,
+.feature-grid,
+.location-grid,
+.contact-blocks,
+.team-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.overview-grid,
+.feature-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.overview-card {
+  padding: 1.75rem;
+}
+
+.overview-card h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+}
+
+.overview-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.3rem;
+}
+
+.overview-card li {
+  margin-bottom: 0.5rem;
+}
+
+.overview-pink {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(255, 255, 255, 0.98));
+}
+
+.overview-blue {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(255, 255, 255, 0.98));
+}
+
+.feature-card {
+  padding: 1.75rem;
+}
+
+.feature-card h3 {
+  margin-top: 0;
+}
+
+.feature-rose {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.12), rgba(255, 255, 255, 0.98));
+}
+
+.feature-blue {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(255, 255, 255, 0.98));
+}
+
+.feature-orange {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(255, 255, 255, 0.98));
+}
+
+.feature-green {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(255, 255, 255, 0.98));
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.6vw, 2.3rem);
+}
+
+.section-heading p {
+  margin: 0.75rem 0 0;
+  color: #475569;
+}
+
+.location-card,
+.contact-card,
+.team-card {
+  margin-top: 1.5rem;
+}
+
+.location-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1.25rem;
+}
+
+.location-item,
+.contact-item,
+.team-profile {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.location-item strong,
+.contact-item h3,
+.team-name {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #0f172a;
+}
+
+.map-frame {
+  width: 100%;
+  min-height: 260px;
+  border: none;
+  border-radius: 24px;
+  margin-top: 1.5rem;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.gallery-card {
+  margin-top: 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1rem;
+}
+
+.gallery-item {
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.gallery-item figcaption {
+  padding: 1rem;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.gallery-image {
+  min-height: 140px;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-image-attention {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(190, 242, 255, 0.42));
+}
+
+.gallery-image-material {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(220, 252, 231, 0.42));
+}
+
+.gallery-image-reception {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.18), rgba(254, 202, 202, 0.42));
+}
+
+.gallery-image-team {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.18), rgba(237, 233, 254, 0.42));
+}
+
+.contact-card .contact-blocks {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.text-link {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.contact-form {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.form-group span {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.input-field,
+.textarea-field {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: #f8fafc;
+  padding: 1rem 1rem;
+  font: inherit;
+  color: #0f172a;
+}
+
+.textarea-field {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  width: fit-content;
+  margin-top: 0.5rem;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #16a34a;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.2);
+  text-decoration: none;
+  font-size: 1.5rem;
+  z-index: 20;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-2px);
+}
+
+.service-list {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.service-list span {
+  display: block;
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+  background: rgba(59, 130, 246, 0.08);
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.team-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1.25rem;
+}
+
+.team-profile p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.team-name {
+  font-size: 1rem;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  padding: 1rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  opacity: 0.96;
+}
+
+.button-primary {
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.12);
+}
+
+.button-secondary {
+  background: #ffffff;
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 18px 40px rgba(16, 185, 129, 0.12);
+}
+
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 1.75rem;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0.75rem 0;
+  line-height: 1.75;
+}
+
+.phone a,
+.intro a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.button-secondary:hover,
+.button-primary:hover {
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.14);
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1.25rem 1.5rem 2.5rem;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+@media (max-width: 640px) {
+  .logo-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-header {
+    padding: 2.25rem 1.25rem 3rem;
+  }
+
+  .container {
+    margin-top: -1.75rem;
+  }
+}
